@@ -1,3 +1,4 @@
 function solution(s) {
-    return (s.length===4 || s.length===6) && /^[0-9]+$/.test(s);
+    if (s.includes('e') || isNaN(s)) return false;
+    return (s.length === 4 || s.length === 6) ? true : false;
 }
