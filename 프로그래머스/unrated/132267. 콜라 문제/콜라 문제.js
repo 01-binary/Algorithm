@@ -1,13 +1,10 @@
-function solution(a, b, n) {
-    let total = 0;
+const solution = (a, b, n) => {
+	if (n < a) {
+		return 0;
+	}
 
-    while (n >= a) {
-        let quotient = Math.floor(n / a);
-        let remainder = n % a;
-        
-        total += quotient * b;
-        n = quotient * b + remainder;
-    }
+	const 몫 = Math.floor(n / a);
+	const 나머지 = n % a;
 
-    return total;
+	return 몫 * b + solution(a, b, (몫 * b) + 나머지)
 }
